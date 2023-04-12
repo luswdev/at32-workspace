@@ -50,6 +50,8 @@ extern "C" {
   *      devices, you can define the device in your toolchain compiler preprocessor.
   */
 
+#define AT32F415RCT7
+
 #if !defined (AT32F415RCT7)   && !defined (AT32F415RCT7_7) && !defined (AT32F415CCT7)   && \
     !defined (AT32F415CCU7)   && !defined (AT32F415KCU7_4) && !defined (AT32F415RBT7)   && \
     !defined (AT32F415RBT7_7) && !defined (AT32F415CBT7)   && !defined (AT32F415CBU7)   && \
