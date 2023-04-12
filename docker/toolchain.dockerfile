@@ -12,6 +12,9 @@ RUN apt-get install -y \
     perl \
     cpanminus \
     libtool \
+    autoconf \
+    automake \
+    pkgconf \
     bzip2
 
 ARG TOOLCHAIN_PLAT=x86_64-linux
