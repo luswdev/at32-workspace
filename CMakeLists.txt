@@ -10,7 +10,7 @@ set(CMAKE_OBJCOPY       "${CROSS_COMPILER}objcopy")
 set(CMAKE_OBJDUMP       "${CROSS_COMPILER}objdump")
 
 set(CMAKE_C_FLAGS
-    "-Wall -fno-common -O0 -g -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 --specs=nosys.specs"
+    "-Wall -fno-common -O0 -g -mthumb -mcpu=cortex-m4 --specs=nosys.specs"
 )
 set(CMAKE_CXX_FLAGS ${CMAKE_C_FLAGS})
 set(CMAKE_ASM_FLAGS ${CMAKE_C_FLAGS})
@@ -23,8 +23,6 @@ aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/app/src app)
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/drivers/cmsis/src cmsis)
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/drivers/at32f415/src at32f415)
 
-add_library(startup OBJECT ${CMAKE_CURRENT_LIST_DIR}/drivers/startup/startup_at32f415.s)
-
 include_directories(
     ${CMAKE_CURRENT_LIST_DIR}/app/inc
     ${CMAKE_CURRENT_LIST_DIR}/drivers/cmsis/inc
@@ -36,10 +34,12 @@ add_executable(
     ${app}
     ${cmsis}
     ${at32f415}
+    ${CMAKE_CURRENT_LIST_DIR}/drivers/startup/startup_at32f415.s
 )
 
 target_link_libraries(
     ${PROJECT_NAME}.elf
+    ${startup}
 )
 
 add_custom_command(
