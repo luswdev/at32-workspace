@@ -7,12 +7,12 @@ if [ -t 1 ];then
         -it --rm  \
         --hostname at32-workspace \
         --workdir /opt/project \
-        stm32-workspace:latest $RUN_CMD
+        at32-workspace:latest $RUN_CMD
 else
     docker run -v $(pwd):/opt/project \
     -i --rm  \
     --hostname at32-workspace \
     --workdir /opt/project \
-    stm32-workspace:latest $RUN_CMD
+    ar32-workspace:latest $RUN_CMD
 fi
 
