@@ -1,0 +1,21 @@
+name: Full Build AT32 Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build the Docker Image
+        run: docker build --network=host -t at32-workspace . -f docker/toolchain.dockerfile
+
+      - name: Test Build AT32 Flash Image
+        run: docker run -v $(pwd):/opt/project -i --rm --hostname at32-workspace --workdir /opt/project at32-workspace:latest ./build.sh
