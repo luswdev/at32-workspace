@@ -39,7 +39,6 @@ add_executable(
 
 target_link_libraries(
     ${PROJECT_NAME}.elf
-    ${startup}
 )
 
 add_custom_command(
