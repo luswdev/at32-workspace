@@ -27,6 +27,6 @@ print $telnet->cmd('flash probe 0');
 print $telnet->cmd('at32f4xx mass_erase 0');
 print $telnet->cmd('flash write_image erase '.$file.' 0x08000000');
 print $telnet->cmd('reset');
-print $telnet->cmd('exit');
+print $telnet->cmd('shutdown');
 
 print "\n";
