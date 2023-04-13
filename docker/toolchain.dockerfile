@@ -40,9 +40,9 @@ RUN rm -rf cmake.tar.gz cmake-$CMAKE_VER
 
 RUN cmake --version
 
-ARG OPENOCD_VER=v0.12.0
+ARG OPENOCD_VER=v1.0.0
 
-RUN git clone https://git.code.sf.net/p/openocd/code openocd
+RUN git clone https://github.com/ArteryTek/openocd.git openocd
 RUN cd openocd && git checkout $OPENOCD_VER
 
 RUN cd openocd && ./bootstrap
