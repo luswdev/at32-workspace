@@ -5,6 +5,9 @@ set(CMAKE_C_COMPILER    "${CROSS_COMPILER}gcc")
 set(CMAKE_CXX_COMPILER  "${CROSS_COMPILER}g++")
 set(ASM_COMPILER        "${CROSS_COMPILER}g++")
 
+set(CMAKE_C_COMPILER_LAUNCHER          "ccache")
+set(CMAKE_CXX_COMPILER_LAUNCHER        "ccache")
+
 set(CMAKE_OBJSIZE       "${CROSS_COMPILER}size")
 set(CMAKE_OBJCOPY       "${CROSS_COMPILER}objcopy")
 set(CMAKE_OBJDUMP       "${CROSS_COMPILER}objdump")
