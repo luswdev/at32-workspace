@@ -19,6 +19,8 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -T ${CMAKE_CURRENT_LIST_DI
 project(at32-framework
     LANGUAGES C ASM)
 
+add_definitions(-DAT32F415RCT7)
+
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/app/src app)
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/drivers/cmsis/src cmsis)
 aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/drivers/at32f415/src at32f415)
