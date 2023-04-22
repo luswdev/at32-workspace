@@ -6,8 +6,8 @@ RUN apt-get install -y \
     make \
     cmake \
     gcc \
-    ccache \
     g++ \
+    ccache \
     libssl-dev \
     bzip2
 
